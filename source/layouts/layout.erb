@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "The Middleman" %></title>
+
+    <%= stylesheet_link_tag "all" %>
+    <%= javascript_include_tag  "all" %>
+  </head>
+
+  <body class="<%= page_classes %>">
+    <div class='container'>
+    <header>
+      <h1> Talya &<br>Yonatan </h1>
+      <h2> 21<sup>st</sup> Jun, 2016 </h2>
+      <h2> Beit Al Ha'Yam <br> Tel Aviv, Israel </h2>
+      <!-- <nav>
+        <ul>
+          <li>The Wedding</li>
+          <li>The City</li>
+        </ul>
+      </nav> -->
+    </header>
+    <%= yield %>
+    <hr>
+    <footer>
+      If you have any questions you can always contact us at <span style='text-decoration: underline'>hey@TalyaAndYonatan.com</span>
+    </footer>
+  </div>
+  </body>
+</html>
