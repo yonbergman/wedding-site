@@ -1,6 +1,23 @@
 @charset "utf-8";
 @import 'normalize';
 
+$container-size: 960px;
+$mobile-size: 480px;
+
+@mixin sm() {
+  @media screen and (max-width: $mobile-size){
+    @content;
+  }
+}
+
+
+@mixin md() {
+  @media screen and (max-width: $container-size){
+    @content;
+  }
+}
+
+
 body {
   border-top: solid 14px #000;
   color: #212121;
@@ -10,8 +27,14 @@ body {
 }
 
 .container {
-  max-width: 960px;
+  max-width: $container-size;
   margin: 0 auto;
+}
+.mobile-margin{
+  @include md() {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 header{
@@ -22,7 +45,7 @@ sup {
   top: -0.25em;
 }
 
-h1 {
+h1,h2 {
 
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
@@ -35,26 +58,42 @@ h1 {
 }
 
 h2 {
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-  font-size: 32px;
-  float: left;
-  text-align: left;
-  font-weight: 100;
-  line-height: 1;
+  // font-family: 'Open Sans', sans-serif;
+  // text-transform: uppercase;
+  // font-size: 32px;
+  float: right;
+  text-align: right;
+  // font-weight: 100;
+  // line-height: 1;
 
 }
 
 header {
+  height: 80px;
+  margin: 20px 0;
   h1, h2 {
-    width: 33%;
-    height: 100%;
+    // width: 33%;
+    margin: 0;
+    // padding: 0;
+    // float: left;
+    // height: 100%;
+    // vertical-align: botom;
+  }
+  .date {
+    font-size: 60px;
+    // margin-right: 20px;
+    margin-top: 10px;
+    color:#555;
+    @include md() {
+      font-size: 40px;
+      margin-top: 20px;
+    }
   }
   h1 {
   }
   h2 {
-    text-align: center;
-    border-left: 1px solid black;
+    // text-align: center;
+    // border-left: 1px solid black;
     // margin-left: 7%;
     // padding-left: 7%;
   }
@@ -78,18 +117,23 @@ header {
 
 .main {
   position: relative;
+  .poster-container {
+    position: relative;
+  }
+
   .save-the-date{
     display: block;
     content: '';
+    // background: rgba(pink, 0.5);
     background-image: url('/images/save-the-date.png');
-    background-size: 30%;
+    background-size: 60%;
     background-repeat: no-repeat;
-    background-position: top right;
-    width: 100%;
-    height: 100%;
+    background-position: bottom right;
+    width: 98%;
+    height: 97%;
     position: absolute;
-    right: 5%;
-    top: 5%;
+    left: 0;
+    top: 0;
   }
   img {
     max-width: 100%;
