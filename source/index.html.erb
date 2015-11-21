@@ -28,11 +28,40 @@ title: Talya & Yonatan - Save the Date - 21st June 2016
   <hr>
   <div class='rsvp-form'>
   <h3> PRE-RSVP </h3>
-  <form>
-    <input type='text' id='name' placeholder='Your Name'>
-    <input type='number' id='attendees' placeholder='# of People'>
-    <input type='email' id='email' placeholder='Your Email (Optional)'>
-    <input type='submit'/ >
+  <form id="app" v-on:submit.stop.prevent='save'>
+    <div class='error' v-if='errorMsg'>
+      {{ errorMsg }}
+    </div>
+    <div class='form-group'>
+      <input type='text' v-model="name" placeholder='Full Name'/>
+    </div>
+    <div class='form-group'>
+      <h4> Are you coming? </h4>
+      <input type="radio" id="yes" value="yes" v-model="status"/>
+      <label for="yes">Yes, defintely </label>
+      <input type="radio" id="maybe" value="maybe" v-model="status"/>
+      <label for="maybe">Maybe, hopefully</label>
+      <input type="radio" id="no" value="no" v-model="status"/>
+      <label for="no">No, sorry</label>
+    </div>
+    <div v-if='rsvpd'  transition='expand'>
+    <div class='form-group' v-if='coming'>
+      <br/>
+      <input type='number' number v-model='attendees' placeholder='# of People'/>
+      <input type='email' v-model='email' placeholder='Your Email (Optional)'/>
+      <br/><br/>
+    </div>
+    <div v-if='maybe'>
+      <p> Thanks for letting us know </p>
+    </div>
+    <div v-if='notComing'>
+      <p> That's OK, thanks for letting us know </p>
+    </div>
+    <input type='submit' value='Send'/ >
+    <i class='fa fa-spinner fa-spin fa-grey' v-show='loading'></i>
+    <i class='fa fa-check fa-green' v-show='done'></i>
+  </div>
+
   </form>
 </div>
 </div>

@@ -56,10 +56,10 @@ set :images_dir, 'images'
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
   # activate :asset_hash
@@ -72,6 +72,7 @@ configure :build do
 end
 
 activate :deploy do |deploy|
+  deploy.build_before = true
   deploy.method = :git
   # remote is optional (default is "origin")
   # run `git remote -v` to see a list of possible remotes
