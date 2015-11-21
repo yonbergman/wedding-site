@@ -185,3 +185,38 @@ footer {
   margin: 10px -20px;
   padding: 6px;
 }
+
+.radio-group {
+  .radio-opt {
+    display: inline;
+  }
+  @include sm {
+  overflow: hidden;
+  input {
+    float: left;
+    clear: left;
+    vertical-align: middle;
+    margin-top: 7px;
+  }
+  .radio-opt {
+    border-bottom: 1px solid #bbb;
+    overflow: hidden;
+    padding: 10px;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  label {
+    float: left;
+    vertical-align: middle;
+    margin-left: 10px;
+    padding: 5px;
+  }
+  }
+}
+
+input[type='text'], input[type='email'], input[type='number'] {
+  @include sm {
+    width: 95%;
+  }
+}
