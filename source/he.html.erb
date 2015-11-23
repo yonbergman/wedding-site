@@ -1,0 +1,80 @@
+---
+title: Talya & Yonatan - Save the Date - 21.06.2016
+---
+<div dir="rtl">
+<header class='mobile-margin'>
+  <h1> Talya & Yonatan </h1>
+</header>
+<div class="main">
+  <div class='poster-container'>
+    <div class='save-the-date'>
+      Save the Date<br>
+      <span class='date'>
+      21.06.2016
+    </span>
+    </div>
+
+  </div>
+  <p class='center-text'>
+    אנחנו שמחים להזמין אתכם לאירוע הפתיחה המרגש של הקיץ, החתונה שלנו! שתערך ב-
+    <br/><br/>
+    <a href='http://www.housea.co.il/' target="_blank">בית על הים</a><br/>
+    <a href='http://www.elledecor.com/life-culture/travel/g317/tel-aviv-travel-guide/' target="_blank">תל אביב</a>
+    <br/><br/>
+    נשמח לראות ולרקוד עם כולכם. אנא השתמשו בטופס למטה כדי להודיע לנו אם אתם מתכוונים להגיע.
+    <br/><br/>
+    <span class='align-right'>
+    ❤  T&Y
+  </span>
+  </p>
+
+  <hr>
+  <div class='rsvp-form'>
+  <h3> טופס </h3>
+  <form id="app" v-on:submit.stop.prevent='save'>
+    <div class='error' v-if='errorMsg'>
+      {{ errorMsg }}
+    </div>
+    <div class='form-group'>
+      <input type='text' v-model="name" placeholder='שם מלא'/>
+    </div>
+    <div class='form-group radio-group'>
+      <h4> האם אתם מגיעים? </h4>
+      <div class='radio-opt'>
+      <input type="radio" id="yes" value="yes" v-model="status"/>
+      <label for="yes">כן, בטח </label>
+    </div><div class='radio-opt'>
+      <input type="radio" id="maybe" value="maybe" v-model="status"/>
+      <label for="maybe">אולי, בתקווה </label>
+      </div><div class='radio-opt'>
+      <input type="radio" id="no" value="no" v-model="status"/>
+      <label for="no">לא, מצטערים</label>
+    </div>
+    </div>
+    <div v-if='rsvpd'  transition='expand'>
+    <div class='form-group' v-if='coming'>
+      <br/>
+      <input type='number' number v-model='attendees' placeholder='כמות אנשים'/>
+      <input type='email' v-model='email' placeholder='אימייל'/>
+      <br/><br/>
+    </div>
+    <div v-if='maybe'>
+      <p> תודה שהודעתם לנו </p>
+    </div>
+    <div v-if='notComing'>
+      <p> זה בסדר, תודה שהודעתם לנו </p>
+    </div>
+    <input type='submit' value='Send'/ >
+    <i class='fa fa-spinner fa-spin fa-grey' v-show='loading'></i>
+    <i class='fa fa-check fa-green' v-show='done'></i>
+  </div>
+
+  </form>
+</div>
+</div>
+<hr>
+<footer>
+  לכל שאלה או פרטים נוספים ניתן לפנות אלינו בכתובת
+  <a href='mailto:hey@TalyaAndYonatan.com' class='inline'>hey@TalyaAndYonatan.com</a>
+</footer>
+</div>
