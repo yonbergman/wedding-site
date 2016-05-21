@@ -283,3 +283,17 @@ input[type='text'], input[type='email'], input[type='number'] {
     box-shadow: none;
   }
 }
+
+.web-only {
+  display: inline;
+  @include sm {
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+  @include sm {
+      display: inline;
+  }
+}
