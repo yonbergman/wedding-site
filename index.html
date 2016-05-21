@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <title>Talya & Yonatan - Save the Date - 21st June 2016</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300|Tangerine' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link href="stylesheets/all.css" rel="stylesheet" />
+    <meta name='description' content="Talya & Yonatan's wedding">
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+
+  <body class="index">
+    <header class='mobile-margin'>
+  <h1> Talya & Yonatan </h1>
+</header>
+<div class="main">
+  <div class='poster-container'>
+    <div class='save-the-date'>
+      Save the Date<br>
+      <span class='date'>
+      21.06.2016
+    </span>
+    </div>
+
+  </div>
+  <p class='center-text'>
+    We are absolutely thrilled to invite you to the anticipated summer kick-off wedding of the year, to take place at
+    <br/><br/>
+    <a href='http://www.housea.co.il/' target="_blank">Bayit al Hayam</a><br/>
+    <a href='http://www.elledecor.com/life-culture/travel/g317/tel-aviv-travel-guide/' target="_blank">Tel Aviv, Israel</a>
+    <br/><br/>
+    We would love to see and dance with you all. Kindly let us know below if you think you will be able to join us for this once in a lifetime event. 
+    <br/><br/>
+    <span class='align-right'>
+    ❤  T&Y
+  </span>
+  </p>
+
+  <hr>
+  <div class='rsvp-form'>
+  <h3> PRE-RSVP </h3>
+  <form id="app" v-on:submit.stop.prevent='save'>
+    <div class='error' v-if='errorMsg'>
+      {{ errorMsg }}
+    </div>
+    <div class='form-group'>
+      <input type='text' v-model="name" placeholder='Full Name'/>
+    </div>
+    <div class='form-group radio-group'>
+      <h4> Are you coming? </h4>
+      <div class='radio-opt'>
+      <input type="radio" id="yes" value="yes" v-model="status"/>
+      <label for="yes">Yes, definitely </label>
+    </div><div class='radio-opt'>
+      <input type="radio" id="maybe" value="maybe" v-model="status"/>
+      <label for="maybe">Maybe, hopefully </label>
+      </div><div class='radio-opt'>
+      <input type="radio" id="no" value="no" v-model="status"/>
+      <label for="no">No, sorry</label>
+    </div>
+    </div>
+    <div v-if='rsvpd'  transition='expand'>
+    <div class='form-group' v-if='coming'>
+      <br/>
+      <input type='number' number v-model='attendees' placeholder='# of People'/>
+      <input type='email' v-model='email' placeholder='Your Email (Optional)'/>
+      <br/><br/>
+    </div>
+    <div v-if='maybe'>
+      <p> Thanks for letting us know </p>
+    </div>
+    <div v-if='notComing'>
+      <p> That's OK, thanks for letting us know </p>
+    </div>
+    <input type='submit' value='Send'/ >
+    <i class='fa fa-spinner fa-spin fa-grey' v-show='loading'></i>
+    <i class='fa fa-check fa-green' v-show='done'></i>
+  </div>
+
+  </form>
+</div>
+</div>
+<hr>
+<footer>
+  If you have any questions, you can always contact us at <a href='mailto:hey@TalyaAndYonatan.com' class='inline'>hey@TalyaAndYonatan.com</a>
+  <br/><br/>
+  <a href='/he.html' dir='rtl'><img class='flag' src='../images/flag-IL.png'/> שינוי שפה</a>
+</footer>
+
+    <script src="javascripts/all.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-70459609-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
