@@ -230,3 +230,35 @@ input[type='text'], input[type='email'], input[type='number'] {
   position: relative;
   border: 1px solid #d5d5d5;
 }
+
+
+.invite{
+  background: #f4f4f4;
+  border-top: none;
+  padding: 20px;
+  img {
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 0 10px rgba(black, 0.2);
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+
+.invite-footer{
+  // display: flex;
+  text-align: center;
+  margin-top: 15px;
+  &__item {
+    border-right: 1px solid black;
+    padding-right:10px;
+    margin-right: 10px;
+    display: inline;
+    &:last-child {
+      border-right: none;
+      padding-right: 0;
+      margin-right: 0;
+    }
+  }
+}
